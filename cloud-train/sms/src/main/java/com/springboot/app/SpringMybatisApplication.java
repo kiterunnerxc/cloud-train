@@ -2,6 +2,7 @@ package com.springboot.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  * All rights Reserved, Designed By Suixingpay.
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
  */
 @SpringBootApplication
+@EnableAspectJAutoProxy(proxyTargetClass=true)
 public class SpringMybatisApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringMybatisApplication.class,args);
