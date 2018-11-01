@@ -12,10 +12,12 @@ import lombok.Data;
  */
 @Data
 public class Student {
+    //学生学号
+    private  Integer id;
     //学生姓名
     private String name;
     //性别
-    private Integer sex;
+    private String sex;
     //年龄
     private Integer age;
     //班级
@@ -28,6 +30,5 @@ public class Student {
     private String year;
     //学生状态
     private Integer status;
-    //学生学号
-    private String sid;
+
 }
