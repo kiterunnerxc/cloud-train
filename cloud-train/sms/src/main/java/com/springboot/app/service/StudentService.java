@@ -28,4 +28,8 @@ public class StudentService {
         return studentMapper.selectById();
     }
 
+    public int insert(Student student){
+        return  studentMapper.insert(student);
+    }
+
 }

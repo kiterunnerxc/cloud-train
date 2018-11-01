@@ -18,14 +18,23 @@ import java.util.List;
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
  */
 @RestController
-@RequestMapping("/user")
+
 public class StudentController {
     @Autowired
     private StudentService userService;
 
-    @GetMapping
+    @RequestMapping("/list")
     public List<Student> list() {
 
         return userService.list();
+    }
+
+    @RequestMapping("/insert")
+    public int insert(){
+        Student student = new Student();
+        student.setId(3);
+        student.setAge(15);
+        student.setName("wanguw");
+        return userService.insert(student);
     }
 }
