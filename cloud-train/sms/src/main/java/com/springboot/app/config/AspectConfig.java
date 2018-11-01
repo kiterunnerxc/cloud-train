@@ -11,7 +11,8 @@ package com.springboot.app.config;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.reflect.Pointcut;
+import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -21,7 +22,7 @@ import java.util.Arrays;
 public class AspectConfig {
     //@Pointcut("execution(public * com.springboot.app.service..*Service.*(..) throws java.lang.IllegalAccessException)")
     //@org.aspectj.lang.annotation.Pointcut("execution(public * com.springboot.app.service..*Service.*(..) throws java.lang.IllegalAccessException)")
-    @org.aspectj.lang.annotation.Pointcut("within(com.springboot.app.service.*)")
+    @Pointcut("within(com.springboot.app.service.*)")
     public void matchCondition(){}
 
     @Around("matchCondition()")
@@ -34,6 +35,6 @@ public class AspectConfig {
         joinPoint.proceed();
         long endTime = System.currentTimeMillis();
         Long executeTime = endTime-startTime;
-        System.out.println("后置通知：方法执行时间为" + executeTime);
+        System.out.println("后置通知：方法执行时间为" + executeTime+"ms");
     }
 }
