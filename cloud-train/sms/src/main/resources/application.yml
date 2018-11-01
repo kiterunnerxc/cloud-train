@@ -1,0 +1,13 @@
+mybatis:
+  mapper-locations: mybatis/*.xml
+  configuration:
+    default-statement-timeout: 5
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://localhost:3306/users
+    username: root
+    password: wadzxqes7
