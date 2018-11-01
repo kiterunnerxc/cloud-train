@@ -2,7 +2,6 @@ package com.springboot.app.service;
 
 import com.springboot.app.domain.Student;
 import com.springboot.app.mapper.StudentMapper;
-import com.springboot.app.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +20,12 @@ public class StudentService {
     @Autowired
     private StudentMapper studentMapper;
 
-    public List<Student> list(){
+    public List<Student> list() {
         return studentMapper.list();
     }
-    public List<Student> selectById(){return studentMapper.selectById();}
+
+    public List<Student> selectById() {
+        return studentMapper.selectById();
+    }
 
 }
