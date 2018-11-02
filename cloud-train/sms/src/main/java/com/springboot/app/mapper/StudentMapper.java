@@ -14,9 +14,9 @@ import java.util.List;
  */
 public interface StudentMapper {
     List<Student> list();
-    List<Student> selectById();
-    Integer deleteById();
-    Integer updateById();
+    List<Student> selectById(int i);
+    Integer deleteById(int i);
+    Integer updateById(Student student);
     Integer insert(Student student);
 
 }
