@@ -30,7 +30,7 @@ public class TestConsumerController {
     private Environment env;
 
     @RequestMapping("/consumer")
-    public String test1(String p1, Integer p2) {
-        return env.getProperty("server.port") + ":" + client.test1(p1, p2);
+    public String test1() {
+        return client.list();
     }
 }

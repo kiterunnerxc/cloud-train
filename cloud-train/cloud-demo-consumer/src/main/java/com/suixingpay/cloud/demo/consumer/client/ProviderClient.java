@@ -9,7 +9,9 @@ package com.suixingpay.cloud.demo.consumer.client;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.suixingpay.cloud.demo.consumer.client.ProviderClient.FallbackConfiguration;
@@ -22,17 +24,17 @@ import com.suixingpay.cloud.demo.consumer.client.ProviderClient.TestFallback;
  * @version: V1.0
  * @review: renjinhao/2018年10月22日 下午6:11:32
  */
-@FeignClient(name = "cloud-demo-provider", fallback = TestFallback.class, configuration = FallbackConfiguration.class)
-@RequestMapping("/demo")
+//, fallback = TestFallback.class, configuration = FallbackConfiguration.class
+@FeignClient(name = "cloud-demo-provider")
 public interface ProviderClient {
 
-    @RequestMapping("/provider")
-    public String test1(@RequestParam("p1") String p1, @RequestParam("p2") Integer p2);
+    @RequestMapping(value = "/student", method = RequestMethod.GET)
+    public String list();
 
     public static class TestFallback implements ProviderClient {
 
         @Override
-        public String test1(String p1, Integer p2) {
+        public String list() {
             return "errrrrror";
         }
 
