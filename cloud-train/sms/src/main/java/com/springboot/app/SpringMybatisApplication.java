@@ -2,6 +2,8 @@ package com.springboot.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
@@ -14,6 +16,8 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  */
 @SpringBootApplication
 @EnableAspectJAutoProxy(proxyTargetClass=true)
+@EnableFeignClients
+@EnableCircuitBreaker
 public class SpringMybatisApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringMybatisApplication.class,args);

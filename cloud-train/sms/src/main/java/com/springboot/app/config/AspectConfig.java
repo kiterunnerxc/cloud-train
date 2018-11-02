@@ -25,15 +25,18 @@ public class AspectConfig {
     public void matchCondition(){}
 
     @Around("matchCondition()")
-    public void before(ProceedingJoinPoint joinPoint) throws Throwable{
+    public Object execute(ProceedingJoinPoint joinPoint) throws Throwable{
         long startTime = System.currentTimeMillis();
-        System.out.println("前置通知：执行方法为：" +
-                joinPoint.getSignature().getDeclaringTypeName() +
-                "." + joinPoint.getSignature().getName()
-                + "   方法参数：" + Arrays.toString(joinPoint.getArgs()));
-        joinPoint.proceed();
+        System.out.println("前置通知：执行方法为："
+                + joinPoint.getSignature().getDeclaringTypeName()
+                + "."
+                + joinPoint.getSignature().getName()
+                + "   方法参数："
+                + Arrays.toString(joinPoint.getArgs()));
+        Object object = joinPoint.proceed();
         long endTime = System.currentTimeMillis();
         Long executeTime = endTime-startTime;
         System.out.println("后置通知：方法执行时间为" + executeTime);
+        return object;
     }
 }
