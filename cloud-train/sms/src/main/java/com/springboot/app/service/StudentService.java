@@ -4,6 +4,8 @@ import com.springboot.app.domain.Student;
 import com.springboot.app.mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -24,12 +26,20 @@ public class StudentService {
         return studentMapper.list();
     }
 
-    public List<Student> selectById() {
-        return studentMapper.selectById();
+    public List<Student> selectById(int id) {
+        return studentMapper.selectById(id);
     }
-
+    @Transactional()
     public int insert(Student student){
         return  studentMapper.insert(student);
+    }
+    @Transactional()
+    public int deleteById(int id){
+        return  studentMapper.deleteById(id);
+    }
+    @Transactional()
+    public int updateById(int id){
+        return studentMapper.updateById(id);
     }
 
 }

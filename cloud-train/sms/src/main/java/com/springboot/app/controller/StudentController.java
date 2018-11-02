@@ -3,9 +3,8 @@ package com.springboot.app.controller;
 import com.springboot.app.domain.Student;
 import com.springboot.app.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,23 +17,36 @@ import java.util.List;
  * 注意：本内容仅限于随行付支付有限公司内部传阅，禁止外泄以及用于其他的商业用途。
  */
 @RestController
-
+@RequestMapping("/student")
 public class StudentController {
     @Autowired
-    private StudentService userService;
+    private StudentService studentService;
 
-    @RequestMapping("/list")
-    public List<Student> list() {
-
-        return userService.list();
-    }
-
-    @RequestMapping("/insert")
+//    @RequestMapping("/insert")
+    @PostMapping
     public int insert(){
         Student student = new Student();
         student.setId(3);
         student.setAge(15);
         student.setName("wanguw");
-        return userService.insert(student);
+        return studentService.insert(student);
     }
+//    @RequestMapping("/list")
+    @DeleteMapping
+    public  int deleteById(int id){
+        return studentService.deleteById(id);
+    }
+    @PutMapping
+    public  int updateById(int id ){
+        return studentService.updateById(id);
+
+    }
+
+    @GetMapping
+    public List<Student> list() {
+
+        return studentService.list();
+    }
+
+
 }
