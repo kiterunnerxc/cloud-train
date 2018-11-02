@@ -24,11 +24,8 @@ public class StudentController {
 
 //    @RequestMapping("/insert")
     @PostMapping
-    public int insert(){
-        Student student = new Student();
-        student.setId(3);
-        student.setAge(15);
-        student.setName("wanguw");
+    public int insert(Student student){
+
         return studentService.insert(student);
     }
 //    @RequestMapping("/list")
