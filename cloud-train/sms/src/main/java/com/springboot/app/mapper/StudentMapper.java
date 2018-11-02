@@ -16,7 +16,7 @@ public interface StudentMapper {
     List<Student> list();
     List<Student> selectById(int i);
     Integer deleteById(int i);
-    Integer updateById(int i);
+    Integer updateById(Student student);
     Integer insert(Student student);
 
 }

@@ -38,8 +38,8 @@ public class StudentService {
         return  studentMapper.deleteById(id);
     }
     @Transactional()
-    public int updateById(int id){
-        return studentMapper.updateById(id);
+    public int updateById(Student student){
+        return studentMapper.updateById(student);
     }
 
 }

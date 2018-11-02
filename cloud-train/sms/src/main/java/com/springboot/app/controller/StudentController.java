@@ -34,8 +34,8 @@ public class StudentController {
         return studentService.deleteById(id);
     }
     @PutMapping
-    public  int updateById(int id ){
-        return studentService.updateById(id);
+    public  int updateById(Student student ){
+        return studentService.updateById(student);
 
     }
 
@@ -44,6 +44,9 @@ public class StudentController {
 
         return studentService.list();
     }
-
+    @GetMapping
+    public List<Student> selectById(int id){
+        return studentService.selectById(id);
+    }
 
 }
