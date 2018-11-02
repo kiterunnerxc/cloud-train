@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.*;
 import com.suixingpay.cloud.demo.consumer.client.ProviderClient.FallbackConfiguration;
 import com.suixingpay.cloud.demo.consumer.client.ProviderClient.TestFallback;
 
+import javax.ws.rs.GET;
+
 /**
  * 
  * @author: renjinhao
@@ -24,16 +26,17 @@ import com.suixingpay.cloud.demo.consumer.client.ProviderClient.TestFallback;
  */
 //, fallback = TestFallback.class, configuration = FallbackConfiguration.class
 @FeignClient(name = "cloud-demo-provider")
+@RequestMapping("/student")
 public interface ProviderClient {
 
-    @RequestMapping(value = "/student", method = RequestMethod.GET)
+    @GetMapping()
     public String list();
-    @PostMapping
-    public int insert(Student student);
+    @PostMapping()
+    public int insert(@RequestBody Student student);
     @DeleteMapping
-    public int  deleteById(int id);
+    public int  deleteById(@RequestParam("id") int id);
     @PutMapping
-    public int  updateById(Student student);
+    public int  updateById(@RequestBody Student student);
 
     public static class TestFallback implements ProviderClient {
 

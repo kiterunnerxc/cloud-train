@@ -23,17 +23,17 @@ public class StudentController {
 
 //    @RequestMapping("/insert")
     @PostMapping
-    public int insert(Student student){
+    public int insert(@RequestBody Student student){
 
         return studentService.insert(student);
     }
 //    @RequestMapping("/list")
     @DeleteMapping
-    public  int deleteById(int id){
+    public  int deleteById(@RequestParam("id") int id){
         return studentService.deleteById(id);
     }
     @PutMapping
-    public  int updateById(Student student ){
+    public  int updateById(@RequestBody Student student ){
         return studentService.updateById(student);
 
     }
