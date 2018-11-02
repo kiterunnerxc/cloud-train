@@ -5,6 +5,8 @@
       <profile default="true" name="Default" enabled="true" />
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cloud-demo-common_main" target="1.8" />
+      <module name="cloud-demo-common_test" target="1.8" />
       <module name="cloud-demo-consumer_main" target="1.8" />
       <module name="cloud-demo-consumer_test" target="1.8" />
       <module name="cloud-demo-provider_main" target="1.8" />

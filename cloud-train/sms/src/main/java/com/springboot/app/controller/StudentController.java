@@ -1,9 +1,8 @@
 package com.springboot.app.controller;
 
-import com.springboot.app.domain.Student;
+import com.springboot.app.common.domain.Student;
 import com.springboot.app.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,14 +38,14 @@ public class StudentController {
 
     }
 
-    @GetMapping
+    @GetMapping()
     public List<Student> list() {
 
         return studentService.list();
     }
-    @GetMapping
-    public List<Student> selectById(int id){
-        return studentService.selectById(id);
-    }
+//    @GetMapping
+//    public List<Student> selectById(int id){
+//        return studentService.selectById(id);
+//    }
 
 }

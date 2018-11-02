@@ -9,5 +9,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
     compile("com.suixingpay.starter:suixingpay-starter-logback:$suixingpayStarterVersion") // logback及trace filter
+    compile(project(":cloud-demo-common"))
 }
 description = "服务消费者实例"

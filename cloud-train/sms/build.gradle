@@ -9,4 +9,5 @@ dependencies {
     compile("io.github.openfeign:feign-httpclient")
     compile("org.springframework.cloud:spring-cloud-starter-netflix-hystrix")
     compile("org.springframework.cloud:spring-cloud-starter-netflix-ribbon")
+    compile(project(":cloud-demo-common"))
 }

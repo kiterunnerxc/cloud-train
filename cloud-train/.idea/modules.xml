@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cloud-demo-common.iml" filepath="$PROJECT_DIR$/.idea/modules/cloud-demo-common.iml" group="cloud-demo-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cloud-demo-common/cloud-demo-common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cloud-demo-common/cloud-demo-common_main.iml" group="cloud-demo-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/cloud-demo-common/cloud-demo-common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cloud-demo-common/cloud-demo-common_test.iml" group="cloud-demo-common" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cloud-demo-consumer/cloud-demo-consumer.iml" filepath="$PROJECT_DIR$/.idea/modules/cloud-demo-consumer/cloud-demo-consumer.iml" group="cloud-demo-consumer" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cloud-demo-consumer/cloud-demo-consumer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/cloud-demo-consumer/cloud-demo-consumer_main.iml" group="cloud-demo-consumer" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cloud-demo-consumer/cloud-demo-consumer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/cloud-demo-consumer/cloud-demo-consumer_test.iml" group="cloud-demo-consumer" />

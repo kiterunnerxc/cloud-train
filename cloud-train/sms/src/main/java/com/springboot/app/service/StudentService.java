@@ -1,10 +1,9 @@
 package com.springboot.app.service;
 
-import com.springboot.app.domain.Student;
+import com.springboot.app.common.domain.Student;
 import com.springboot.app.mapper.StudentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

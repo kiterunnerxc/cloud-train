@@ -4,4 +4,5 @@ include "cloud-gateway"
 include "cloud-demo-provider"
 include "cloud-demo-consumer"
 include 'sms'
+include 'cloud-demo-common'
 

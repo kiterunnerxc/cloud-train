@@ -7,10 +7,10 @@
  */
 package com.suixingpay.cloud.demo.consumer.controller;
 
+import com.springboot.app.common.domain.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.suixingpay.cloud.demo.consumer.client.ProviderClient;
 
@@ -29,8 +29,25 @@ public class TestConsumerController {
     @Autowired
     private Environment env;
 
-    @RequestMapping("/consumer")
-    public String test1() {
+    @GetMapping()
+    public String list() {
         return client.list();
     }
+
+    @PostMapping
+    public int insert(Student student){
+
+        return client.insert(student);
+    }
+    //    @RequestMapping("/list")
+    @DeleteMapping
+    public  int deleteById(int id){
+        return client.deleteById(id);
+    }
+    @PutMapping
+    public  int updateById(Student student ){
+        return client.updateById(student);
+
+    }
+
 }

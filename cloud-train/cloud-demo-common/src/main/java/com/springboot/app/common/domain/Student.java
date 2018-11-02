@@ -1,4 +1,4 @@
-package com.springboot.app.domain;
+package com.springboot.app.common.domain;
 
 import lombok.Data;
 

@@ -1,6 +1,7 @@
 package com.springboot.app.mapper;
 
-import com.springboot.app.domain.Student;
+
+import com.springboot.app.common.domain.Student;
 
 import java.util.List;
 

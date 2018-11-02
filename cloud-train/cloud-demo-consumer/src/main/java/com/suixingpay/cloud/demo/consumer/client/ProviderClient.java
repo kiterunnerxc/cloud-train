@@ -7,12 +7,10 @@
  */
 package com.suixingpay.cloud.demo.consumer.client;
 
+import com.springboot.app.common.domain.Student;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import com.suixingpay.cloud.demo.consumer.client.ProviderClient.FallbackConfiguration;
 import com.suixingpay.cloud.demo.consumer.client.ProviderClient.TestFallback;
@@ -30,6 +28,12 @@ public interface ProviderClient {
 
     @RequestMapping(value = "/student", method = RequestMethod.GET)
     public String list();
+    @PostMapping
+    public int insert(Student student);
+    @DeleteMapping
+    public int  deleteById(int id);
+    @PutMapping
+    public int  updateById(Student student);
 
     public static class TestFallback implements ProviderClient {
 
@@ -37,6 +41,22 @@ public interface ProviderClient {
         public String list() {
             return "errrrrror";
         }
+
+        @Override
+        public int insert(Student student) {
+            return 0;
+        }
+
+        @Override
+        public int deleteById(int id) {
+            return 0;
+        }
+
+        @Override
+        public int updateById(Student student) {
+            return 0;
+        }
+
 
     }
 

@@ -7,13 +7,17 @@
     <facet type="web" name="Web">
       <configuration>
         <webroots />
+        <sourceRoots />
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output-test url="file://$MODULE_DIR$/../../../cloud-demo-consumer/out/test/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../cloud-demo-consumer/src/test" />
+    <content url="file://$MODULE_DIR$/../../../cloud-demo-consumer/src/test">
+      <sourceFolder url="file://$MODULE_DIR$/../../../cloud-demo-consumer/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../cloud-demo-consumer/src/test/resources" type="java-test-resource" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="cloud-demo-consumer_main" />
@@ -26,6 +30,7 @@
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:1.5.9.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-actuator:1.5.9.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: com.suixingpay.starter:suixingpay-starter-logback:3.0.4.RELEASE" level="project" />
+    <orderEntry type="module" module-name="cloud-demo-common_main" />
     <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.16.18" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:1.5.9.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-test-autoconfigure:1.5.9.RELEASE" level="project" />
