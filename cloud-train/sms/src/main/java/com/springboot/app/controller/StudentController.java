@@ -22,6 +22,7 @@ public class StudentController {
     private StudentService studentService;
 
 //    @RequestMapping("/insert")
+    //@RequestBody
     @PostMapping
     public int insert(@RequestBody Student student){
 
@@ -32,6 +33,7 @@ public class StudentController {
     public  int deleteById(@RequestParam("id") int id){
         return studentService.deleteById(id);
     }
+//    @RequestBody
     @PutMapping
     public  int updateById(@RequestBody Student student ){
         return studentService.updateById(student);

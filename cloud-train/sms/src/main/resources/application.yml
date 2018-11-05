@@ -9,9 +9,9 @@ spring:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
   datasource:
-    url: jdbc:mysql://172.16.41.253:3306/users
+    url: jdbc:mysql://localhost:3306/users
     username: root
-    password: root
+    password: wadzxqes7
   application:
     name: cloud-demo-provider
 
@@ -34,3 +34,16 @@ feign:
     connectionTimeout: 1000
     maxConnectionsPerRoute: 2
     maxConnections: 10
+
+suixingpay:
+  swagger2:
+    title: sms
+    description: sms
+    contact:
+      name: matieli
+      url: http://vbill.cn
+      email: ma_tl@suixingpay.com
+    # swagger 需要扫的包
+    base-package: com.springboot.app
+    base-path: /**
+    exclude-path: /error, ${management.context-path}/**
